@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="0ee655d9-434e-459b-b7e9-748b9cbd70ff" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Input.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Oppy.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/serviceWorker.js" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1WyqH4jY0Lop5Iz9y7nDu3R4r08" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0ee655d9-434e-459b-b7e9-748b9cbd70ff" name="Default Changelist" comment="" />
+      <created>1580132090506</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1580132090506</updated>
+      <workItem from="1580132092430" duration="11414000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="697" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1580133757349">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state x="697" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1044@0.0.1920.1044" timestamp="1580133757349" />
+    <state x="460" y="156" key="SettingsEditor" timestamp="1580137133685">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state x="460" y="156" key="SettingsEditor/0.0.1920.1044@0.0.1920.1044" timestamp="1580137133685" />
+    <state width="498" height="446" key="SwitcherDM" timestamp="1580135567686">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state width="498" height="446" key="SwitcherDM/0.0.1920.1044@0.0.1920.1044" timestamp="1580135567686" />
+    <state x="627" y="124" width="665" height="795" key="find.popup" timestamp="1580132349013">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state x="627" y="124" width="665" height="795" key="find.popup/0.0.1920.1044@0.0.1920.1044" timestamp="1580132349013" />
+    <state x="623" y="229" width="672" height="678" key="search.everywhere.popup" timestamp="1580137144320">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state x="623" y="229" width="672" height="678" key="search.everywhere.popup/0.0.1920.1044@0.0.1920.1044" timestamp="1580137144320" />
+  </component>
+</project>
