@@ -21,9 +21,8 @@ const orientation = "N";
 const App = () => {
   const initRover = createRover(position, orientation);
   const [command, setCommand] = useState("");
-  const [commands, setCommands] = useState([]);
-  const [orientationRover, setOrientationRover] = useState(0);
-  const [color, setColor] = useState("white");
+  const [orientationRover, setOrientationRover] = useState(-90);
+  const [color, setColor] = useState("yellowgreen");
   const [initialRover, setInitialRover] = useState(initRover);
 
   const changeOrientation = orientation => {
@@ -39,8 +38,7 @@ const App = () => {
 
   const validateCommand = () => {
     let commandSplitted = command.split("");
-    setCommands(commandSplitted);
-    multipleProceedInput();
+    proceedMultipleInput(commandSplitted);
   };
 
   const handleClick = () => {
@@ -51,9 +49,9 @@ const App = () => {
     return { orientation, position };
   }
 
-  const multipleProceedInput = () => {
-    commands.forEach((input, index) => {
-      setInitialRover(proceedInput(initialRover, input));
+  const proceedMultipleInput = commands => {
+    commands.forEach(async (input, index) => {
+      await setInitialRover(proceedInput(initialRover, input));
     });
   };
 
@@ -83,8 +81,8 @@ const App = () => {
 
   function updatePositionRover(rover, command) {
     const mapDeMaps = {
-      a: { x: { E: 1, O: -1, N: 0, S: 0 }, y: { E: 0, O: 0, N: 1, S: -1 } },
-      r: { x: { E: -1, O: 1, N: 0, S: 0 }, y: { E: 0, O: 0, N: -1, S: 1 } }
+      r: { x: { E: 1, O: -1, N: 0, S: 0 }, y: { E: 0, O: 0, N: 1, S: -1 } },
+      a: { x: { E: -1, O: 1, N: 0, S: 0 }, y: { E: 0, O: 0, N: -1, S: 1 } }
     };
 
     const position = {
@@ -147,7 +145,7 @@ const App = () => {
           <Arrow
             x={initialRover.position.x * 100}
             y={initialRover.position.y * 100}
-            fill={color}
+            fill="black"
             shadowBlur={2}
             width={20}
             height={20}
