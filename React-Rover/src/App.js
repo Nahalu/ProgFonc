@@ -9,32 +9,34 @@ const getRandomInt = (min, max) => {
   return result;
 };
 
-const obstacles = [
-  { position: { x: getRandomInt(1, 10), y: getRandomInt(1, 10) } },
-  { position: { x: getRandomInt(1, 10), y: getRandomInt(1, 10) } },
-  { position: { x: getRandomInt(1, 10), y: getRandomInt(1, 10) } },
-  { position: { x: getRandomInt(1, 10), y: getRandomInt(1, 10) } }
-];
-const position = { x: 5, y: 5 };
+const position = { x: 3, y: 3 };
 const orientation = "N";
+const obstacles = [
+  { position: { x: 3, y: 3 } },
+  { position: { x: getRandomInt(4, 6), y: getRandomInt(4, 6) } },
+  { position: { x: getRandomInt(4, 6), y: getRandomInt(4, 6) } },
+  { position: { x: getRandomInt(4, 6), y: getRandomInt(4, 6) } },
+  { position: { x: getRandomInt(4, 6), y: getRandomInt(4, 6) } },
+  { position: { x: getRandomInt(4, 6), y: getRandomInt(4, 6) } },
+  { position: { x: getRandomInt(4, 6), y: getRandomInt(4, 6) } }
+];
 
 const App = () => {
   const initRover = createRover(position, orientation);
   const [command, setCommand] = useState("");
-  const [orientationRover, setOrientationRover] = useState(-90);
+  const [orientationRover, setOrientationRover] = useState(270);
   const [color, setColor] = useState("yellowgreen");
   const [initialRover, setInitialRover] = useState(initRover);
 
-  const changeOrientation = orientation => {
+  function changeOrientation(orientation) {
     const orientationMap = {
-      d: 90,
-      g: -90,
+      r: 0,
       a: 0,
-      r: 0
+      g: 90,
+      d: -90
     };
-
     setOrientationRover(orientationRover + orientationMap[orientation]);
-  };
+  }
 
   const validateCommand = () => {
     let commandSplitted = command.split("");
@@ -49,19 +51,23 @@ const App = () => {
     return { orientation, position };
   }
 
-  const proceedMultipleInput = commands => {
-    commands.forEach(async (input, index) => {
-      await setInitialRover(proceedInput(initialRover, input));
+  function proceedMultipleInput(commands) {
+    commands.map((input, index) => {
+      console.log(initialRover);
+      let updatedRover = proceedInput(initialRover, input);
+      setInitialRover(updatedRover);
     });
-  };
+  }
 
   function proceedInput(rover, command) {
-    let input = {
+    const input = {
       a: updatePositionRover(rover, "a"),
       r: updatePositionRover(rover, "r"),
       g: updateOrientationRover(rover, "g"),
       d: updateOrientationRover(rover, "d")
     };
+
+    changeOrientation(command);
     return input[command];
   }
 
@@ -71,7 +77,7 @@ const App = () => {
     });
   };
 
-  function move(coord, orientation, mapSize, orientationMap) {
+  function moveRover(coord, orientation, mapSize, orientationMap) {
     let collision = isInCollision();
     if (collision.length > 0) {
       alert("Obstacle !");
@@ -86,8 +92,18 @@ const App = () => {
     };
 
     const position = {
-      x: move(rover.position.x, rover.orientation, 50, mapDeMaps[command].x),
-      y: move(rover.position.y, rover.orientation, 50, mapDeMaps[command].y)
+      x: moveRover(
+        rover.position.x,
+        rover.orientation,
+        50,
+        mapDeMaps[command].x
+      ),
+      y: moveRover(
+        rover.position.y,
+        rover.orientation,
+        50,
+        mapDeMaps[command].y
+      )
     };
     return { ...rover, position };
   }
@@ -99,13 +115,8 @@ const App = () => {
     const updatedIndex =
       (currentIndexOrientation + commandMap[command] + 4) % 4;
     let updatedOrientation = orientations[updatedIndex];
-    changeOrientation(command);
     return { ...rover, orientation: updatedOrientation };
   }
-
-  const handleChange = e => {
-    setCommand(e);
-  };
 
   return (
     <>
@@ -114,7 +125,7 @@ const App = () => {
           variant="outlined"
           style={{ width: "200px", height: "40px", margin: "10px auto" }}
           value={command}
-          onChange={e => handleChange(e.target.value)}></TextField>
+          onChange={e => setCommand(e.target.value)}></TextField>
         <Button
           style={{ width: "200px", height: "40px", margin: "10px auto" }}
           color="primary"
